@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello LedenController!{% endblock %}
+
+{% block body %}
+
+
+<div class="example-wrapper">
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">Datum</th>
+            <th scope="col">Tijd</th>
+            <th scope="col">Sport</th>
+            <th scope="col">Prijs</th>
+            <th scope="col">Aantal ingeschreven</th>
+            <th scope="col">Uitschrijven</th>
+        </tr>
+        </thead>
+        <tbody>
+
+    {% for les in lesson %}
+    <tr>
+        <th scope="col">{{ les.lesson.date|date('d-m-Y') }}</th>
+        <th scope="col">{{ les.lesson.time|date('H:i') }}</th>
+        <th scope="col">{{ les.lesson.training.name}}</th>
+        <th scope="col">{{ les.lesson.training.cost}}</th>
+        <th scope="col">{{registration.memberCount(les.Lesson)|length  }}</th>
+        <th scope="col">Uitschrijven</th>
+    </tr>
+    {% endfor %}
+
+        </tbody>
+    </table>
+
+
+</div>
+{% endblock %}

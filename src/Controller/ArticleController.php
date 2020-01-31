@@ -14,7 +14,7 @@ class ArticleController extends AbstractController
      */
     public function homepage()
     {
-        return $this->render('Home.html.twig');
+        return $this->render('Home/Home.html.twig');
     }
     /**
      * @Route("/" , name="adminHome")

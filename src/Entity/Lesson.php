@@ -38,10 +38,7 @@ class Lesson
      */
     private $max_persons;
 
-    /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\User", inversedBy="lessons")
-     */
-    private $User;
+
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Training", inversedBy="lessons")
@@ -111,17 +108,7 @@ class Lesson
         return $this;
     }
 
-    public function getUser(): ?User
-    {
-        return $this->User;
-    }
 
-    public function setUser(?User $User): self
-    {
-        $this->User = $User;
-
-        return $this;
-    }
 
     public function getTraining(): ?Training
     {
